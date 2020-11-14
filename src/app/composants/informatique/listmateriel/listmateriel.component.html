@@ -1,0 +1,11 @@
+<h1>Nos produits en informatique</h1>
+<ul><ng-container *ngFor="let t of materiels" >
+    <ng-container [ngSwitch]="true">
+    <li *ngSwitchCase="t.quantite!=0 ">
+       <img src="{{t.photo}}" >  {{t.libelle}} <span *ngSwitchCase="t.hautGamme"  class="badge badge-primary" >Prix :{{t.prix}}DT<i class=" fa fa-thumbs-up de font-awesome" aria-hidden="true"></i></span>
+       <span *ngSwitchCase="t.hautGamme==false"  class="badge badge-dark" >Prix :{{t.prix}}DT</span></li>
+    </ng-container>
+</ng-container>
+</ul>
+
+
