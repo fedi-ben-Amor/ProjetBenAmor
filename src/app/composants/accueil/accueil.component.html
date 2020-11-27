@@ -1,11 +1,19 @@
-<h2>Bienvenue au suppermarché {{nomSupermarket|supermarketpipe}}</h2>
+<h2 class="text-center pt-4">Bienvenue au suppermarché {{nomSupermarket|supermarketpipe}}</h2>
+<div class="containter">
+    <div class="row">
 
-<div class="card-columns" >
-        <div class="card" *ngFor="let mat of lesCategories" >
-            <img class="card-img-top" data-src="{{mat.image}}" alt="" class="rounded-circle ">
-            <div class="card-body">
-                <p class="card-text" class="badge badge-dark">{{mat.nom|uppercase}}</p>
-            </div>
-        </div> 
+    <div  class="col-6 text-center" *ngFor="let mat of lesCategories" >
+        <img [src]="mat.image" alt="photo" class="rounded-circle ">
+       
+    <p  ><span class="badge badge-dark">{{mat.nom|uppercase}}</span>
+   
+       </p>
+           
+        
+
 </div>
+</div>
+</div>
+
+ 
 
