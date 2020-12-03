@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-6">
+        <h1> Détail du "PC" d'Id:2</h1>
+        <div *ngFor="let t of materiel" >
+            <ul >
+                <li ><img style="width:150px;height:120px;" src="{{t.photo}}" ></li>
+                <li > Marque {{t.marque}} </li>
+                <li > Prix {{t.prix}}</li>
+                <li > Description {{t.description}} </li>
+                <li > Quantité {{t.quantite}} </li>
+                <li ><input type="checkbox" checked="{{t.hautGamme}}" >Haut de Gamme </li>
+                <li ><button type="button" class="btn btn-primary">Afficher les commentaires</button></li>
+            </ul>
+        </div>
+    </div>
+
+</div>
