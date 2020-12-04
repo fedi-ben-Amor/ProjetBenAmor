@@ -8,6 +8,7 @@ import { ListmaterielComponent } from './composants/informatique/listmateriel/li
 import { SupermarketpipePipe } from './supermarketpipe.pipe';
 import { MaterielComponent } from './composants/informatique/materiel/materiel.component';
 import { DetailmaterielComponent } from './composants/informatique/detailmateriel/detailmateriel.component';
+import { CommentComponent } from './composants/commentaires/comment/comment.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { DetailmaterielComponent } from './composants/informatique/detailmaterie
     ListmaterielComponent,
     SupermarketpipePipe,
     MaterielComponent,
-    DetailmaterielComponent
+    DetailmaterielComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
