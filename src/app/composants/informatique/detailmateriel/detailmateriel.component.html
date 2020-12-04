@@ -9,20 +9,23 @@
                 <li class="list-group-item"> Description {{t.description}} </li>
                 <li class="list-group-item"> Quantité {{t.quantite}} </li>
                 <li class="list-group-item"><input type="checkbox" checked="{{t.hautGamme}}" >Haut de Gamme </li>
-                <li class="list-group-item"><button type="button" class="btn btn-primary">Afficher les commentaires</button></li>
+                <li class="list-group-item"><button  class="btn btn-primary" (click)="onAffiche()">Afficher les commentaires</button></li>
             </ul>
         </div>
     </div>
-
-    <div class="col-6">
+    <div *ngIf="!affiche">
+   
+        <div *ngFor="let t of materiel" >
         <h2> liste des commentaires </h2>
             
-                <div *ngFor="let COM of Commentaire; let i = index" >
-                <fed-comment [C]="COM"></fed-comment>
+                <div *ngFor="let com of t.commentaires ;index as i" >
+                    <div > commentaire n° {{i+1}}:{{com.contenu}} </div>
+                <fed-comment [c]="com" ></fed-comment>
                     </div>
               
         </div>
 
+</div>
 </div>
         
     
