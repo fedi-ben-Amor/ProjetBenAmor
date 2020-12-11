@@ -1,20 +1,18 @@
- <div class="card text-center">
-     <div class="card-header">
-        {{mat.libelle|titlecase}}
-     </div>
-     <div class="card-body">
-        <img [src]="mat.photo" alt="photo" > 
-        <br/>
-  
-        <span   Class="badge badge-pill" 
-            [ngClass]="{'badge-primary':mat.hautGamme,'badge-dark':!mat.hautGamme}">
-        
-        prix:{{mat.prix}}DT
-        <i [ngClass]="{'fa fa-thumbs-up' : mat.hautGamme}"></i>
-         </span>
-     </div>
-     <div class="card-footer text-muted">
-   <button class="btn btn-primary"  >Détails </button>
-   
-     </div>
- </div>
+<div class="card text-center">
+    <div class="card-header">
+        {{mat.libelle |titlecase}}
+    </div>
+    <div class="card-body">
+        <img [src]="mat.photo" alt="photo">
+<br>
+        <span class="badge badge-pill "
+            [ngClass]="{'badge-primary':mat.hautGamme,
+                        'badge-dark':!mat.hautGamme}">
+            Prix : {{mat.prix}} DT
+            <i [ngClass]="{'fa fa-thumbs-up': mat.hautGamme}"></i>
+        </span>
+    </div>
+    <div class="card-footer text-muted">
+        <button type="button" class="btn btn-primary">Détails</button>
+    </div>
+</div>

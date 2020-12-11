@@ -1,34 +1,39 @@
-<div class="row">
-    <div class="col-6">
-    <h1> Détail du "PC" d'Id:2</h1>
-        <div *ngFor="let t of materiel" >
+<div class="container"  *ngFor="let mat of materiel">
+    <div class="row">
+        <div class="col-6" >
+            <h2>Détail du "{{mat.libelle}}" d'Id : {{mat.id}}</h2>
             <ul class="list-group">
-                <li class="list-group-item"><img style="width:150px;height:120px;" src="{{t.photo}}" ></li>
-                <li class="list-group-item"> Marque {{t.marque}} </li>
-                <li class="list-group-item"> Prix {{t.prix}}</li>
-                <li class="list-group-item"> Description {{t.description}} </li>
-                <li class="list-group-item"> Quantité {{t.quantite}} </li>
-                <li class="list-group-item"><input type="checkbox" checked="{{t.hautGamme}}" >Haut de Gamme </li>
-                <li class="list-group-item"><button  class="btn btn-primary" (click)="onAffiche()">Afficher les commentaires</button></li>
+                <li class="list-group-item">
+            <img [src]="mat.photo" alt="photo">
+                </li>
+                <li class="list-group-item">
+                    Marque : {{mat.marque}}
+                </li>
+                <li class="list-group-item">
+                    Prix {{mat.prix}}
+                </li>
+                <li class="list-group-item">
+                    Description {{mat.description}}
+                </li>
+                <li class="list-group-item">
+                    Quantité : {{mat.quantite}}
+                </li>
+                <li class="list-group-item">
+                    <input type="checkbox" [checked]="mat.hautGamme"> Haut de Gamme
+                </li>
+                <li class="list-group-item">
+                    <button type="button" class="btn btn-primary"
+                     (click)="afficher = !afficher">Afficher les commentaires</button>
+                </li>
             </ul>
+            
+        </div>
+        <div class="col-6" *ngIf="afficher">
+            <h2>Liste des commentaires</h2>
+            <div *ngFor= "let c of mat.commentaires; index as i">
+                <fed-comment [comm]="c" [indice]="i"></fed-comment>
+            </div>
         </div>
     </div>
-    <div *ngIf="!affiche">
-   
-        <div *ngFor="let t of materiel" >
-        <h2> liste des commentaires </h2>
-            
-                <div *ngFor="let com of t.commentaires ;index as i" >
-                    <div > commentaire n° {{i+1}}:{{com.contenu}} </div>
-                <fed-comment [c]="com" ></fed-comment>
-                    </div>
-              
-        </div>
-
 </div>
-</div>
-        
-    
-
-
 
