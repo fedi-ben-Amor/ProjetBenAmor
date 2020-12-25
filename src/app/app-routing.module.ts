@@ -11,6 +11,7 @@ const routes: Routes = [
   {path:'informatique',component:ListmaterielComponent},
   {path:'contact',component:ContactComponent},
   {path:'informatique/:id',component:DetailmaterielComponent},
+  {path:'', redirectTo:'accueil', pathMatch:'full'},
   {path:'**',component:Error404Component}
 
 ];
