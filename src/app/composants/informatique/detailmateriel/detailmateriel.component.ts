@@ -9,8 +9,8 @@ import { Materiel } from '../../../models/materiel';
 })
 export class DetailmaterielComponent implements OnInit {
   afficher:boolean =false;
-  materiel:Materiel[]=[];
-   id:string="";
+  materiel:Materiel;
+
   
  /*
 onClick(){
